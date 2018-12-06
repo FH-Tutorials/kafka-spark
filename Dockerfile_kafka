@@ -1,0 +1,11 @@
+FROM openjdk:8-jdk-alpine
+
+ARG kafka_dir=kafka
+
+RUN apk add bash
+COPY $kafka_dir /root/kafka
+
+WORKDIR /root/kafka
+
+ENTRYPOINT ["bin/kafka-server-start.sh", "config/server.properties"]
+
