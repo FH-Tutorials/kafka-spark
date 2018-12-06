@@ -21,7 +21,7 @@ Fix the kafka_dir parameter in the docker-composer.yml to the directory name of 
 docker-compose build
 ```
 
-Finally runt the container by calling
+Finally run the container by calling
 
 ```bash
 docker-compose up
