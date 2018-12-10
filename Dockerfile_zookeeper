@@ -4,6 +4,7 @@ ARG kafka_dir=kafka
 
 RUN apk add bash
 COPY $kafka_dir /root/kafka
+COPY config /root/kafka/config
 
 WORKDIR /root/kafka
 
