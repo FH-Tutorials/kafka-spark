@@ -29,8 +29,40 @@ docker-compose up
 
 ## Important Commands
 
+Executed from kafka main directory:
+
+**For Linux**
 
 ```bash
 # create new topic
-kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+
+# list topics
+bin/kafka-topics.sh --list --zookeeper localhost:2181
+
+# produce ...
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+
+# consume ...
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
 ```
+
+**For Windows**
+
+```powershell
+# create new topic
+bin/windows/kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+
+# list topics
+bin/windows/kafka-topics.bat --list --zookeeper localhost:2181
+
+# produce ...
+bin/windows/kafka-console-producer.bat --broker-list localhost:9092 --topic test
+
+# consume ...
+bin/windows/kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning
+```
+
+## Further Help
+
+Further help can be found at the [Kafka Documentation](https://kafka.apache.org/quickstart)
