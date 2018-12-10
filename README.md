@@ -10,7 +10,7 @@
 
 ## Install
 
-Download latest kafka version and unzip it. E.g.
+Get latest kafka version from the official [Download Page](https://www.apache.org/dyn/closer.cgi?path=/kafka/2.1.0/kafka_2.11-2.1.0.tgz) and unzip it. E.g. on Linux
 
 ```bash
 wget http://ftp.halifax.rwth-aachen.de/apache/kafka/2.1.0/kafka_2.11-2.1.0.tgz
