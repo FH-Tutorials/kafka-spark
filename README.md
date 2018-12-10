@@ -27,6 +27,20 @@ Finally run the container by calling
 docker-compose up
 ```
 
+From the logs of docker you can find the login token necessary for the jupyter login. Execute
+
+```bash
+docker logs $(docker ps -f name=notebook -q)
+```
+
+from Powershell or Bash. In the logs the following line should be found:
+
+> > "Copy/paste this URL into your browser when you connect for the first time, to login with a token:"
+
+Beneath the login token is presented like:
+
+> > http://(bce2f8d711eb or 127.0.0.1):8888/?token=cddf0aaf8cefe270ff318973c0dd382c957917fa7ea8e5bd
+
 ## Important Commands
 
 Executed from kafka main directory:
