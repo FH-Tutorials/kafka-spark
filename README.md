@@ -5,6 +5,8 @@
 
   * docker & docker-compose
   * git
+  * tar/wget [for Linux]
+  * 7zip [for Windows]
 
 ## Install
 
