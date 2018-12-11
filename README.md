@@ -1,12 +1,14 @@
 # kafka-spark
 
+Quick installation manual for docker-compose cluster.
 
 ## Pre-Install
 
   * docker & docker-compose
   * git
-  * tar/wget [for Linux]
-  * 7zip [for Windows]
+  * get tar/gzip utility. E.g.:
+    * 7zip [for Windows]
+    * tar [for Linux]
 
 ## Install
 
@@ -79,6 +81,12 @@ bin/windows/kafka-console-producer.bat --broker-list localhost:9092 --topic test
 bin/windows/kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning
 ```
 
-## Further Help
+## Further Help & FAQ
 
-Further help can be found at the [Kafka Documentation](https://kafka.apache.org/quickstart)
+Further help can be found at the [Kafka Quickstart Tutorial](https://kafka.apache.org/quickstart) as well as for the [Kafka Documentation Website](https://kafka.apache.org/)
+
+- [Eduroam Wifi Problems](#eduroam-wifi)
+
+### Eduroam Wifi Problems
+
+In some cases the cluster fails to start because it seems that there is an issue with the firewall. Thus, in some cases it might be necessary to add an DNS entry into the docker-compose.yml file which is described [here](https://docs.docker.com/compose/compose-file/#dns).

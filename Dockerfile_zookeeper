@@ -9,4 +9,3 @@ COPY config /root/kafka/config
 WORKDIR /root/kafka
 
 ENTRYPOINT ["bin/zookeeper-server-start.sh", "config/zookeeper.properties"]
-
