@@ -19,31 +19,35 @@ wget http://ftp.halifax.rwth-aachen.de/apache/kafka/2.1.0/kafka_2.11-2.1.0.tgz
 tar -xvzf kafka_2.11-2.1.0.tgz
 ```
 
-Fix the kafka_dir parameter in the docker-composer.yml to the directory name of the extracted kafka binaries, in case it is different. Then build the docker container:
+Fix the kafka_dir parameter in the docker-composer.yml to the directory name of the extracted kafka binaries, in case it is different. Then build the docker containers using compose:
 
 ```bash
 docker-compose build
 ```
 
-Finally run the container by calling
+Finally run the container cluster by calling
 
 ```bash
 docker-compose up
 ```
 
-From the logs of docker you can find the login token necessary for the jupyter login. Execute
+From the logs docker keeps during runtime, you can find the login token necessary for the jupyter login. Execute
 
 ```bash
 docker logs $(docker ps -f name=notebook -q)
 ```
 
-from Powershell or Bash. In the logs the following line should be found:
+from Powershell or Bash. When following the log entries the following line should be printed somewhere:
 
 > "Copy/paste this URL into your browser when you connect for the first time, to login with a token:"
 
-Beneath the login token is presented like:
+Beneath the login token is presented together with the URL like:
 
 > http://(bce2f8d711eb or 127.0.0.1):8888/?token=cddf0aaf8cefe270ff318973c0dd382c957917fa7ea8e5bd
+
+Thus, depending on the IP of your docker machine (usually its localhost) you can reach the notebook with:
+
+> http://[docker machine IP]:8888/?token=cddf0aaf8cefe270ff318973c0dd382c957917fa7ea8e5bd
 
 ## Important Commands
 
@@ -69,16 +73,16 @@ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --f
 
 ```powershell
 # create new topic
-bin/windows/kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
 
 # list topics
-bin/windows/kafka-topics.bat --list --zookeeper localhost:2181
+bin\windows\kafka-topics.bat --list --zookeeper localhost:2181
 
 # produce ...
-bin/windows/kafka-console-producer.bat --broker-list localhost:9092 --topic test
+bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic test
 
 # consume ...
-bin/windows/kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning
+bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning
 ```
 
 ## Further Help & FAQ
@@ -90,7 +94,7 @@ Further help can be found at the [Kafka Quickstart Tutorial](https://kafka.apach
 
 ### Eduroam Wifi Problems
 
-In some cases the cluster fails to start because it seems that there is an issue with the firewall. Thus, in some cases it might be necessary to add an DNS entry into the docker-compose.yml file which is described [here](https://docs.docker.com/compose/compose-file/#dns).
+In some cases the cluster fails to start because it seems that there is an issue with the firewall. Thus, it might be necessary to add an DNS entry into the docker-compose.yml file which is described [here](https://docs.docker.com/compose/compose-file/#dns) and can be found using `ipconfig /all` on windows and e.g. `cat /etc/resolv.conf` on Linux.
 
 ### Weird error messages
 
