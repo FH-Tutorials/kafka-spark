@@ -25,6 +25,7 @@ services:
       args:
         kafka_dir: 'kafka_2.11-2.1.0'
   notebook:
-    image: jupyter/pyspark-notebook
+    #image: jupyter/pyspark-notebook
+    image: jupyter/all-spark-notebook
     ports:
       - '8888-9000:8888'
