@@ -98,4 +98,4 @@ In some cases the cluster fails to start because it seems that there is an issue
 
 ### Weird error messages
 
-In special cases (particular on Windows) there are strange errors, often related to network connections, which happen sometimes e.g. when the computer came back from hibernation. That means that the docker daemon might be in an  inconsistent state, where usually a restart of the daemon solves the problem.
+In special cases (particular on Windows) there are strange errors, often related to network connections, which happens sometimes e.g. when the computer came back from hibernation. That means that the docker daemon might be in an  inconsistent state, where usually a restart of the daemon solves the problem.
