@@ -83,10 +83,15 @@ bin/windows/kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic
 
 ## Further Help & FAQ
 
-Further help can be found at the [Kafka Quickstart Tutorial](https://kafka.apache.org/quickstart) as well as for the [Kafka Documentation Website](https://kafka.apache.org/)
+Further help can be found at the [Kafka Quickstart Tutorial](https://kafka.apache.org/quickstart) as well as for the [Kafka Documentation Website](https://kafka.apache.org/). Next you'll find some common problems and how to solve them.
 
 - [Eduroam Wifi Problems](#eduroam-wifi-problems)
+- [Weird error messages](#weird-error-messages)
 
 ### Eduroam Wifi Problems
 
 In some cases the cluster fails to start because it seems that there is an issue with the firewall. Thus, in some cases it might be necessary to add an DNS entry into the docker-compose.yml file which is described [here](https://docs.docker.com/compose/compose-file/#dns).
+
+### Weird error messages
+
+In special cases (particular on Windows) there are strange errors, often related to network connections, which happen sometimes e.g. when the computer came back from hibernation. That means that the docker daemon might be in an  inconsistent state, where usually a restart of the daemon solves the problem.
