@@ -83,7 +83,7 @@ bin/windows/kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic
 
 ## Further Help & FAQ
 
-Further help can be found at the [Kafka Quickstart Tutorial](https://kafka.apache.org/quickstart) as well as for the [Kafka Documentation Website](https://kafka.apache.org/). Next you'll find some common problems and how to solve them.
+Further help can be found at the [Kafka Quickstart Tutorial](https://kafka.apache.org/quickstart) as well as on the [Kafka Documentation Website](https://kafka.apache.org/). Next you'll find some common problems and how to solve them.
 
 - [Eduroam Wifi Problems](#eduroam-wifi-problems)
 - [Weird error messages](#weird-error-messages)
