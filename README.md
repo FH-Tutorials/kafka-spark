@@ -1,6 +1,6 @@
 # kafka-spark
 
-Quick installation manual for docker-compose cluster.
+Quick installation manual for a docker-compose cluster including [Apache Kafka](https://kafka.apache.org/) managed by [Apache Zokeeper](https://zookeeper.apache.org/) as well as a [Apache Spark](https://spark.apache.org/) image together with a [jupyter notebook](https://jupyter.org/).
 
 ## Pre-Install
 
