@@ -19,7 +19,7 @@ wget http://ftp.halifax.rwth-aachen.de/apache/kafka/2.1.0/kafka_2.11-2.1.0.tgz
 tar -xvzf kafka_2.11-2.1.0.tgz
 ```
 
-Fix the kafka_dir parameter in the docker-composer.yml to the directory name of the extracted kafka binaries, in case it is different. **Caution**: The kafka extract location must lay within the same directoy like the *docker-compose.yml*. Next build the docker containers using compose:
+Fix the kafka_dir parameter in the docker-composer.yml to the directory name of the extracted kafka binaries, in case it is different. **Caution**: The extraction directory for the kafka files should lay within the repository folder. Docker can only copy files which are within the directroy of docker-compose.yml. Next build the docker containers using compose:
 
 ```bash
 docker-compose build
