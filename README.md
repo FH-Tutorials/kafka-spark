@@ -91,6 +91,7 @@ Further help can be found at the [Kafka Quickstart Tutorial](https://kafka.apach
 
 - [Eduroam Wifi Problems](#eduroam-wifi-problems)
 - [Weird error messages](#weird-error-messages)
+- [docker-compose build fails](#docker-compose-build-fails)
 
 ### Eduroam Wifi Problems
 
@@ -99,3 +100,7 @@ In some cases the cluster fails to start because it seems that there is an issue
 ### Weird error messages
 
 In special cases (particular on Windows) there are strange errors, often related to network connections, which happens sometimes e.g. when the computer came back from hibernation. That means that the docker daemon might be in an  inconsistent state, where usually a restart of the daemon solves the problem.
+
+## docker-compose build fails
+
+The building using docker-compose fails with the error message: "ERROR: Service 'zookeeper' failed to build: COPY failed: stat ...". In that case the downloaded Kafka binaries are in the wrong directory. The extraction directory for the kafka files should lay within the repository folder. Docker can only copy files which are within the directroy of docker-compose.yml
