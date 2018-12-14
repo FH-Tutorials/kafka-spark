@@ -89,7 +89,7 @@ bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic
 
 Further help can be found at the [Kafka Quickstart Tutorial](https://kafka.apache.org/quickstart) as well as on the [Kafka Documentation Website](https://kafka.apache.org/). Next you'll find some common problems and how to solve them.
 
-- [Eduroam Wifi Problems](#eduroam-wifi-problems)
+- [Eduroam Wifi Problems (docker does not build)](#eduroam-wifi-problems)
 - [Weird error messages](#weird-error-messages)
 - [docker-compose build fails](#docker-compose-build-fails)
 - [No entry found for connection](#no-entry-found-for-connection)
@@ -102,10 +102,10 @@ In some cases the cluster fails to start because it seems that there is an issue
 
 In special cases (particular on Windows) there are strange errors, often related to network connections, which happens sometimes e.g. when the computer came back from hibernation. That means that the docker daemon might be in an  inconsistent state, where usually a restart of the daemon solves the problem.
 
-## docker-compose build fails
+### docker-compose build fails
 
 The building using docker-compose fails with the error message: "ERROR: Service 'zookeeper' failed to build: COPY failed: stat ...". In that case the downloaded Kafka binaries are in the wrong directory. The extraction directory for the kafka files should lay within the repository folder. Docker can only copy files which are within the directroy of docker-compose.yml
 
-## No entry found for connection
+### No entry found for connection
 
 It may occure, when running a consumer or a producer that you receive the error "No entry found for connection <number>". In that case you need to add an entry into the **hosts** file for kafka and zookeeper referencing 127.0.0.1. Details on how to do that you can read about at the Java [Producer/Cosumer Example](https://github.com/FH-Tutorials/KafkaProducerConsumer#before-running-the-start-scripts).
