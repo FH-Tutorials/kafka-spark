@@ -108,4 +108,4 @@ The building using docker-compose fails with the error message: "ERROR: Service 
 
 ## No entry found for connection
 
-It may occure, when running a consumer or a producer that you receive the error "No entry found for connection <number>". In that case you need to add an entry into the **hosts** file for kafka and zookeeper referencing 127.0.0.1.
+It may occure, when running a consumer or a producer that you receive the error "No entry found for connection <number>". In that case you need to add an entry into the **hosts** file for kafka and zookeeper referencing 127.0.0.1. Details on how to do that you can read about at the Java [Producer/Cosumer Example](https://github.com/FH-Tutorials/KafkaProducerConsumer#before-running-the-start-scripts).
