@@ -92,6 +92,7 @@ Further help can be found at the [Kafka Quickstart Tutorial](https://kafka.apach
 - [Eduroam Wifi Problems](#eduroam-wifi-problems)
 - [Weird error messages](#weird-error-messages)
 - [docker-compose build fails](#docker-compose-build-fails)
+- [No entry found for connection](#no-entry-found-for-connection)
 
 ### Eduroam Wifi Problems
 
@@ -104,3 +105,7 @@ In special cases (particular on Windows) there are strange errors, often related
 ## docker-compose build fails
 
 The building using docker-compose fails with the error message: "ERROR: Service 'zookeeper' failed to build: COPY failed: stat ...". In that case the downloaded Kafka binaries are in the wrong directory. The extraction directory for the kafka files should lay within the repository folder. Docker can only copy files which are within the directroy of docker-compose.yml
+
+## No entry found for connection
+
+It may occure, when running a consumer or a producer that you receive the error "No entry found for connection <number>". In that case you need to add an entry into the **hosts** file for kafka and zookeeper referencing 127.0.0.1.
